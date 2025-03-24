@@ -15,7 +15,7 @@ export const protectRoute = async (req, res, next) => {
         }
         const user = await Users.findById(decoded.id).select("-password");//select all fields except password
         if (!user) {
-            return res.status(401).json({message: "Unauthorized-User not found"});//if user is not found
+            return res.status(404).json({message: "Unauthorized-User not found"});//if user is not found
         }
         req.user = user;//set user to request object
         next();//move to next middleware

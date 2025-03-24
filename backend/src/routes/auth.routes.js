@@ -20,7 +20,7 @@ router.post("/logout",logout);
 //update profile
 router.put("/updateProfile",protectRoute,updateProfile);
 //check if user is authenticated
-router.get("/check",protectRoute,checkAuth)
+router.get("/check",protectRoute,checkAuth);
 
 
 export default router;
